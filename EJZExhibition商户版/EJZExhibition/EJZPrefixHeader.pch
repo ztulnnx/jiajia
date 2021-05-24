@@ -1,0 +1,74 @@
+//
+//  EJZPrefixHeader.pch
+//  EJZExhibition
+//
+//  Created by 黄传家 on 2018/3/14.
+//  Copyright © 2018年 黄传家. All rights reserved.
+//
+
+#ifndef EJZPrefixHeader_pch
+#define EJZPrefixHeader_pch
+#import "KeyChainStore.h"
+#import "AFNetworking.h"
+//#import "SDWebImage.h"
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
+#define  iPhoneX (WIDTH == 375.f && HEIGHT == 812.f ? YES : NO)
+#define  TabbarSafeBottomMargin  (iPhoneX ? 34.f : 0)
+#define  TabbarSafeNavMargin  (iPhoneX ? 88.f : 64.f)
+#define WRATIO WIDTH/375
+#define HRATIO HEIGHT/667
+//颜色
+#define SXRGB16Color(rgbValue,a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:(a)]
+//状态颜色
+//#define SXRGB16Color(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define SXRGB16ColorAlpha(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:0.2]
+
+#define RGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:a]
+//秘钥
+#define APPKEY @"dedc6addbc8d8ecb73f370f6c9a2e70e"
+//basic URL
+#define WEBSITE @"http://soft.haojin.org/"
+//#define WEBSITE @"http://192.168.0.200/"
+//枚举，网络请求类型
+typedef enum {
+    STATEONE = 1,
+    STATETWO,
+    STATETHREE,
+    STATEFOUR,
+    STATEFIVE,
+    STATESIX,
+    STATEJOIN,
+    STATELOGIN,
+    
+}NETSTATE;
+
+//钥匙串加密数据本地持久化字段命名
+#define  KEY_USERID      @"com.exhibition.hcj.userId"
+#define  KEY_USERNAME    @"com.exhibition.hcj.userName"
+#define  KEY_PHONE       @"com.exhibition.hcj.phone"
+#define  KEY_USERPWD     @"com.exhibition.hcj.userPwd"
+#define  KEY_USERTOKEN   @"com.exhibition.hcj.userToken"
+#define  KEY_UUID        @"com.exhibition.hcj.uuid"
+//登录
+#define Login                   @"app/login"
+//注册
+#define Register                @"app/register"
+//修改资料
+#define ChangeMaterial          @"app/user/modify"
+//用户签名
+#define UserSign                @"app/user/sign"
+//用户信息
+#define UserInfo                @"app/user/info"
+//重置密码
+#define ResetPwd                @"app/user/password/reset"
+//发送验证码
+#define SendCode                @"api/sms/code"
+//上传文件
+#define UpLoad                  @"api/upload"
+
+
+//店铺列表
+#define ShopCreate              @"app/shop/create"
+#endif
