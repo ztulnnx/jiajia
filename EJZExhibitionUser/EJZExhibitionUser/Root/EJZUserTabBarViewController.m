@@ -28,7 +28,7 @@
     [self setupChildVc:[[EJZUserDiscoverViewController alloc] init] title:@"发现" image:@"tab_icon_discover_nor" selectedImage:@"tab_icon_discover_sel" isHiddenNavgationBar:NO];
     [self setupChildVc:[[EJZUserOrderViewController alloc] init] title:@"订购" image:@"tab_icon_shop_nor" selectedImage:@"tab_icon_shop_sel" isHiddenNavgationBar:NO];
     [self setupChildVc:[[EJZUserPersonViewController alloc] init] title:@"我的" image:@"tab_icon_me_nor" selectedImage:@"tab_icon_me_sel" isHiddenNavgationBar:NO];
-
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 }
 
 - (UIImage *)imageWithColor:(UIColor *)color{

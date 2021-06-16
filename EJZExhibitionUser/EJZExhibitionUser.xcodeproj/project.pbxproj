@@ -50,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182525C720FC78B000B7D626 /* NetWorkUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkUrl.h; sourceTree = "<group>"; };
+		182525C820FC78C900B7D626 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		372F63BD36F45BDB9052A369 /* Pods-EJZExhibitionUser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJZExhibitionUser.release.xcconfig"; path = "Pods/Target Support Files/Pods-EJZExhibitionUser/Pods-EJZExhibitionUser.release.xcconfig"; sourceTree = "<group>"; };
 		65A2844CBF7448A3E3BFCDA2 /* Pods-EJZExhibitionUser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJZExhibitionUser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EJZExhibitionUser/Pods-EJZExhibitionUser.debug.xcconfig"; sourceTree = "<group>"; };
 		872549B720771F76008B86FB /* EJZUserNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EJZUserNavViewController.h; sourceTree = "<group>"; };
@@ -126,6 +128,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182525C520FC716A00B7D626 /* PersonModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PersonModels;
+			sourceTree = "<group>";
+		};
+		182525C620FC717900B7D626 /* PersonViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PersonViews;
+			sourceTree = "<group>";
+		};
 		55D0456289E628A75F7FF284 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,9 +182,9 @@
 		872549BF207724DF008B86FB /* Person */ = {
 			isa = PBXGroup;
 			children = (
+				182525C620FC717900B7D626 /* PersonViews */,
+				182525C520FC716A00B7D626 /* PersonModels */,
 				872549C6207725B0008B86FB /* PersonControllers */,
-				872549C4207725AF008B86FB /* PersonModels */,
-				872549C5207725AF008B86FB /* PersonViews */,
 			);
 			path = Person;
 			sourceTree = "<group>";
@@ -210,20 +226,6 @@
 			children = (
 			);
 			path = SearchModels;
-			sourceTree = "<group>";
-		};
-		872549C4207725AF008B86FB /* PersonModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PersonModels;
-			sourceTree = "<group>";
-		};
-		872549C5207725AF008B86FB /* PersonViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PersonViews;
 			sourceTree = "<group>";
 		};
 		872549C6207725B0008B86FB /* PersonControllers */ = {
@@ -367,6 +369,8 @@
 				877C90DD2063A1B800D7973C /* EJZUserNetWorkingTool.m */,
 				877C90DF2063A20D00D7973C /* KeyChainStore.h */,
 				877C90E02063A20D00D7973C /* KeyChainStore.m */,
+				182525C720FC78B000B7D626 /* NetWorkUrl.h */,
+				182525C820FC78C900B7D626 /* Common.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -391,7 +395,6 @@
 				877C909A2063924B00D7973C /* Sources */,
 				877C909B2063924B00D7973C /* Frameworks */,
 				877C909C2063924B00D7973C /* Resources */,
-				FFF6B34416341E4A924F1CD7 /* [CP] Embed Pods Frameworks */,
 				86B418397AE19C839070614D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -519,9 +522,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EJZExhibitionUser/Pods-EJZExhibitionUser-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -534,28 +540,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EJZExhibitionUser-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FFF6B34416341E4A924F1CD7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EJZExhibitionUser/Pods-EJZExhibitionUser-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
